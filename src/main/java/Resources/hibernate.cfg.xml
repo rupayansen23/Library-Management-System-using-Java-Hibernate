@@ -7,6 +7,17 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/lms_hiber</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">1234</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- Hibernate Configuration -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format.sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!--  XML class mapping -->
+        <mapping/>
+        <mapping/>
 
     </session-factory>
 </hibernate-configuration>
