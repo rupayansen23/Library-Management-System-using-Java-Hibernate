@@ -18,7 +18,7 @@ public class Student {
     @Column(name = "s_dept", length = 10)
     private String dept;
 
-    @OneToMany(mappedBy = "students", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Book> allocatedBooks = new ArrayList<>();
 
     public Student(String dept, String firstName, String lastName, String roll) {

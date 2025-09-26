@@ -1,44 +1,29 @@
 package Entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "books")
 public class Book {
     @Id
     private String id;
+
     @Column(name = "b_name", length = 255, unique = true)
     private String name;
-    @Column(name = "b_name", length = 255)
-    private String author;
-    private int totalStock;
-    private int currentStock;
 
-    public Book(String author, int currentStock, String id, String name, int totalStock) {
+    @Column(name = "b_author", length = 255)
+    private String author;
+
+    @ManyToOne
+    @JoinColumn(name = "roll")
+    private Student student;
+
+
+    public Book(String author, String id, String name, Student student) {
         this.author = author;
-        this.currentStock = currentStock;
         this.id = id;
         this.name = name;
-        this.totalStock = totalStock;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public int getCurrentStock() {
-        return currentStock;
-    }
-
-    public void setCurrentStock(int currentStock) {
-        this.currentStock = currentStock;
+        this.student = student;
     }
 
     public String getId() {
@@ -49,6 +34,14 @@ public class Book {
         this.id = id;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public String getName() {
         return name;
     }
@@ -57,11 +50,11 @@ public class Book {
         this.name = name;
     }
 
-    public int getTotalStock() {
-        return totalStock;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setTotalStock(int totalStock) {
-        this.totalStock = totalStock;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 }
