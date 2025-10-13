@@ -18,6 +18,7 @@
         <!--  XML class mapping -->
         <mapping class="Entities.Student"/>
         <mapping class="Entities.Book"/>
+        <mapping class="Entities.Admin"/>
 
     </session-factory>
 </hibernate-configuration>

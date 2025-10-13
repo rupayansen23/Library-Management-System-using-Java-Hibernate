@@ -8,6 +8,7 @@ public class App
     public static void main( String[] args ) {
         System.out.println("--------RCCIIT Library---------");
         Scanner sc = new Scanner(System.in);
+        AppStartup.ensureAdminExists();
         while(true) {
             System.out.println("1 For Register your Name");
             System.out.println("2 for Borrow Books");
