@@ -1,35 +1,27 @@
 package org.example;
 
-import Entities.Student;
-import Utils.HibernateUtil;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+
+import java.util.Scanner;
 
 public class App
 {
     public static void main( String[] args ) {
-        Student student = new Student("mca", "rupayan", "sen",
-                "mca2024010");
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        Session session = sessionFactory.openSession();
-        Transaction transaction = null;
-        try {
-            transaction = session.beginTransaction();
-            session.persist(student);
-            System.out.println("Student saved successfully");
-            transaction.commit();
-        }
-        catch(Exception e) {
-            if(transaction == null) {
-                transaction.rollback();
+        System.out.println("--------RCCIIT Library---------");
+        Scanner sc = new Scanner(System.in);
+        while(true) {
+            System.out.println("1 For Register your Name");
+            System.out.println("2 for Borrow Books");
+            System.out.println("3 for Return Books");
+            System.out.println("4 for show Your Information");
+            System.out.println("5 for Admin Login");
+            System.out.println("6 for exit");
+            System.out.println("Enter your choice : ");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    Registration.registerName();
+                    break;
             }
-            else {
-                e.printStackTrace();
-            }
-        }
-        finally {
-            session.close();
         }
     }
 }
