@@ -14,6 +14,9 @@ public class Admin {
     @Column(name = "ad_password", length = 255, nullable = false)
     private String password;
 
+    public Admin() {
+
+    }
     public Admin(String password, String userName) {
         this.password = password;
         this.userName = userName;

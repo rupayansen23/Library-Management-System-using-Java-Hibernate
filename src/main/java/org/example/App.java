@@ -22,6 +22,9 @@ public class App
                 case 1:
                     Registration.registerName();
                     break;
+                case 5:
+                    AdminService.adminLogin();
+                    break;
             }
         }
     }
